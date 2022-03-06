@@ -31,7 +31,7 @@ namespace ProductApp.Application.Features.Queries.GetProductById
             {
                 var product = await productRepo.GetByIdAsync(request.Id);
                 var viewDto = mapper.Map<ProductViewDto>(product);
-                return new ServiceResponse<ProductViewDto>(viewDto);
+                return new ServiceResponse<ProductViewDto>(viewDto,true,"Ürünler getirildi");
             }
         }
     }

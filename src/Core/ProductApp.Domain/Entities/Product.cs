@@ -9,8 +9,17 @@ namespace ProductApp.Domain.Entities
 {
     public class Product:BaseEntity
     {
-        public string ProductName { get; set; }
-        public decimal Value { get; set; }
-        public int Quantity { get; set; }
+        public string ProductName { get;private set; }
+        public decimal Value { get;private set; }
+        public int Quantity { get;private set; }
+
+        public Product(string productName,decimal value,int quantity)
+        {
+            ProductName = productName;
+            Value = value;
+            Quantity = quantity;
+
+            AddEvent();
+        }
     }
 }

@@ -34,7 +34,7 @@ namespace ProductApp.Application.Features.Commands.CreateProduct
                 var product = mapper.Map<Product>(request);
                 await productRepository.CreateAsync(product);
 
-                return new ServiceResponse<Guid>(product.Id);
+                return new ServiceResponse<Guid>(product.Id,true,"Ürünler getirildi");
             }
         }
     }
